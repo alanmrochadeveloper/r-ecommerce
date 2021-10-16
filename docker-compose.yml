@@ -1,0 +1,32 @@
+version: "3"
+services:
+    frontend:
+        container_name: r-ecommerce-client
+        build: ./client
+        ports:
+        - 4000:3000
+        volumes:
+        - ./client:/home/app/client
+        depends_on:
+        - backend
+
+    backend:
+        container_name: r-ecommerce-api
+        build: ./api
+        ports:
+        - 4001:3001
+        volumes:
+        - ./api:/home/app/api
+        depends_on:
+        - db
+
+    db:
+        container_name: r-ecommerce-db
+        image: postgres
+        environment: 
+            POSGRES_USERNAME:  "postgres"
+            POSTGRES_PASSWORD: "#Postgres123"
+        volumes:
+        - ./db:/var/postgres/
+
+               
