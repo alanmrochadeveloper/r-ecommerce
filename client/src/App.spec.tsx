@@ -32,4 +32,15 @@ describe('Checking App Component', () => {
     const homeButton = await cont.querySelector('header > button[class*="inicio"]')
     await act( async () => expect(homeButton.innerHTML).toContain('Início'))
   })
+
+  it('Should show contact(Contato) button in the headear of the main page', async ()=>{
+    const homeButton = await cont.querySelector('header > button[class*="contato"]')
+    await act( async () => expect(homeButton.innerHTML).toContain('Contato'))
+  })
+
+  it('Should show about(sobre) button in the headear of the main page', async ()=>{
+    const homeButton = await cont.querySelector('header > button[class*="sobre"]')
+    await act( async () => expect(homeButton.innerHTML).toContain('Sobre'))
+  })
+
 })
