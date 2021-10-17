@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <div>ROCHA-ECOMMERCE: </div>
-      <div> API = {state.test}</div>
+      <div className='api-container'> API = {state.test}</div>
     </div>
   )
 }
