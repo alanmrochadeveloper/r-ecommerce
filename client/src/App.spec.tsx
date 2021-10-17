@@ -21,7 +21,7 @@ describe('Checking App Component', () => {
   it('should show API on the screen', async () => {
     await act(async () => {
       const text = cont.querySelector('.api-container')
-      expect(text?.innerHTML).toContain('API')
+      await act(async () => expect(text?.innerHTML).toContain('API'))
     })
   })
 
