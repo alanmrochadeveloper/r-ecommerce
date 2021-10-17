@@ -1,6 +1,4 @@
-import { render, waitFor } from '@testing-library/react'
-import axios from 'axios'
-import { useEffect } from 'react'
+import { render } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
 import App from './App'
 
@@ -28,5 +26,10 @@ describe('Checking App Component', () => {
   it('Should have ant-* in the document, grant that antd is loaded', async () => {
     const appContent = await cont.querySelectorAll('[class^="ant"]')
     await act(async () => expect(appContent.length).toBeGreaterThan(0))
+  })
+
+  it('Should show home button in the headear of the main page', async ()=>{
+    const homeButton = await cont.querySelector('header > button[class*="home"]')
+    await act( async () => expect(homeButton.innerHTML).toContain('home'))
   })
 })

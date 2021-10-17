@@ -23,6 +23,9 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <button className="home">home</button>
+      </header>
       <Title>ROCHA-ECOMMERCE: </Title>
       <div className="api-container"> API = {state.test}</div>
     </div>
