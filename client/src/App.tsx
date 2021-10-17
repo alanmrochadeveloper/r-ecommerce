@@ -1,3 +1,4 @@
+import { Button } from 'antd';
 import Title from 'antd/lib/typography/Title'
 import axios from 'axios'
 import React from 'react'
@@ -24,8 +25,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <button className="home">home</button>
-      </header>
+        <Button type='primary' className="inicio">Início</Button>
+        <Button type='primary' className="contato">Contato</Button>
+        <Button type='primary' className="sobre">Sobre</Button>
+      </header> {/* TODO to be replaced by a component in futures refactors */}
       <Title>ROCHA-ECOMMERCE: </Title>
       <div className="api-container"> API = {state.test}</div>
     </div>
