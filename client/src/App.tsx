@@ -2,13 +2,15 @@ import { Button } from 'antd';
 import Title from 'antd/lib/typography/Title'
 import axios from 'axios'
 import React from 'react'
+import { api } from './utils/globals';
 
 function App() {
   const [state, setState] = React.useState<any>({})
 
   const getInitTestValue = React.useCallback(async () => {
     try {
-      const response = await axios('http://localhost:4001/init-test/test')
+      console.log(`api = ${api}`) // TODO remove this log later
+      const response = await axios(`${api}/init-test/test`)
       setState((prevState: any) => ({ ...prevState, test: response.data }))
     } catch (e) {
       console.log(`error = ${JSON.stringify(e)}`)
