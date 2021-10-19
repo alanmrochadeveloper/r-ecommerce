@@ -21,6 +21,7 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
             <img src={logo} alt={`logo tipo ${appName}`} />
           </div>
           <Menu
+            theme='dark'
             className="nav-menu-container"
             mode="horizontal"
             defaultSelectedKeys={['2']}
@@ -33,7 +34,7 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
         <Content style={{ padding: '0 50px' }}>
           <div className="site-layout-content">{children}</div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>{appName}</Footer>
+        <Footer style={{ textAlign: 'center' }}>{`${appName} ${new Date().getFullYear()}`}</Footer>
       </Layout>
     </>
   )
