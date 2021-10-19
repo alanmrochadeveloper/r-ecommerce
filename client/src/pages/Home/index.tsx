@@ -16,7 +16,7 @@ const Home: React.FC<IProps> = () => {
     } catch (e) {
       console.log(`error = ${JSON.stringify(e)}`)
     }
-  }, [state])
+  }, [])
 
   React.useEffect(() => {
     getInitTestValue()
