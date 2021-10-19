@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const CracoLessPlugin = require('craco-less')
 
 module.exports = {
@@ -29,4 +30,9 @@ module.exports = {
       },
     },
   ],
+=======
+/* craco.config.js */
+module.exports = {
+  // ...
+>>>>>>> 3892415c5ef2e3fffb6f611a90c0a1f297d27264
 }
