@@ -15,46 +15,46 @@ describe('Working with login screen', () => {
       }
     }
 
-  it(`Should have this css frameword in the screen rendered = ${cssFramework}`, () => {
+  it(`Should have this css frameword in the screen rendered = ${cssFramework}`, async () => {
     const { container } = render(<Login />)
     const anyElementWithCssFramework = container.querySelectorAll(
       `[class*="${cssFramework}"]`,
     )
-    act(() => {
+    await act(async () => {
       expect(anyElementWithCssFramework.length).toBeGreaterThan(0)
     })
   })
 
-  it('Should print username label on screen with Nome do usuário inside', () => {
+  it('Should print username label on screen with Nome do usuário inside', async () => {
     const { container } = render(<Login />)
     const label = container.querySelector('label[for*="username"]')
-    act(() => {
+    await act(async () => {
       expect(label?.innerHTML).toContain('Nome do usuário')
     })
   })
 
-  it('Should print password label on screen with Senha inside', () => {
+  it('Should print password label on screen with Senha inside', async () => {
     const { container } = render(<Login />)
     const label = container.querySelector(`label[for*="password"]`)
-    act(() => {
+    await act(async() => {
       expect(label?.textContent).toContain('Senha')
     })
   })
 
-  it('Should print input in the screen with type="text"', () => {
+  it('Should print input in the screen with type="text"', async () => {
     const { container } = render(<Login />)
     const input = container.querySelectorAll('input.username-input[type="text"]')
-    act(() => {
+    await act(async () => {
       expect(input.length).toBeGreaterThan(0)
     })
   })
 
-  it('Should print password in the screen with type="password"', () => {
+  it('Should print password in the screen with type="password"', async () => {
     const { container } = render(<Login />)
     const input = container.querySelectorAll(
       'input[type="password"]',
     )
-    act(() => {
+    await act(async () => {
       expect(input.length).toBeGreaterThan(0)
     })
   })

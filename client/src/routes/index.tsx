@@ -12,7 +12,7 @@ const Routes: React.FC<IProps> = () => {
         <Route exact path="/" component={Home} />
         <Route path="/contato" component={Contact} />
         <Route path="/sobre" component={About} />
-        <Route path="/login" component={Login} />
+        <Route path="/entrar" component={Login} />
     </Switch>
   </>
 }

@@ -43,7 +43,7 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
         </Content>
         <Footer
           style={{ textAlign: 'center' }}
-        >{`${appName} ${new Date().getFullYear()}`}</Footer>
+        >{`${appName} `}&copy;{` ${new Date().getFullYear()}`}</Footer>
       </Layout>
     </>
   )

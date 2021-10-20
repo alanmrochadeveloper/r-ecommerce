@@ -17,6 +17,12 @@ export const navMenuButtons: INavMenuButton [] = [
         path: '/sobre',
         classNameValue: 'sobre',
     },
+    {
+        id: 4,
+        title: 'Entrar',
+        path: '/entrar',
+        classNameValue: 'entrar',
+    },
 ]
 
 interface INavMenuButton {

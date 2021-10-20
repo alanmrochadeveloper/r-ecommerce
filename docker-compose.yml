@@ -28,5 +28,3 @@ services:
             POSTGRES_PASSWORD: "#Postgres123"
         volumes:
         - ./db:/var/postgres/
-
-               
