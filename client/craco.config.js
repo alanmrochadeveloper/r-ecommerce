@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const CracoLessPlugin = require('craco-less')
 
 module.exports = {
@@ -9,13 +8,13 @@ module.exports = {
         lessLoaderOptions: {
           lessOptions: {
             modifyVars: {
-              '@primary-color': '#e30309',
-              '@link-color': '#1890ff',
+              '@primary-color': '#2f2a36',
+              '@link-color': '#d53f3f',
               '@success-color': '#52c41a',
               '@warning-color': '#faad14',
               '@error-color': '#f5222d',
               '@font-size-base': '14px',
-              '@heading-color': 'yellow',
+              '@heading-color': '#2f2a36',
               '@text-color': 'rgba(0, 0, 0, 0.65)',
               '@text-color-secondary': 'rgba(0, 0, 0, 0.45)',
               '@disabled-color': 'rgba(0, 0, 0, 0.25)',
@@ -30,9 +29,4 @@ module.exports = {
       },
     },
   ],
-=======
-/* craco.config.js */
-module.exports = {
-  // ...
->>>>>>> 3892415c5ef2e3fffb6f611a90c0a1f297d27264
 }

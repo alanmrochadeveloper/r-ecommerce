@@ -7,7 +7,6 @@ const App = () => (
     <BrowserRouter>
       <Routes />
     </BrowserRouter>
-    import './App.css'
   </div>
 )
 

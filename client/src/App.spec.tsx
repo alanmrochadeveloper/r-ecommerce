@@ -2,6 +2,8 @@ import { render } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
 import App from './App'
 
+const cssFramework = process.env.REACT_APP_CSS_FRAMEWORK;
+
 let cont: any = null
 describe('Checking App Component', () => {
   beforeEach(async () => {
@@ -24,7 +26,7 @@ describe('Checking App Component', () => {
   })
 
   it('Should have ant-* in the document, grant that antd is loaded', async () => {
-    const appContent = await cont.querySelectorAll('[class^="ant"]')
+    const appContent = await cont.querySelectorAll(`[class^="${cssFramework}"]`)
     await act(async () => expect(appContent.length).toBeGreaterThan(0))
   })
 
