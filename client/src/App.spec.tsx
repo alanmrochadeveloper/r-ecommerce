@@ -66,6 +66,9 @@ describe('Checking App Component', () => {
 
   it('Should show in the class which item is selected',()=>{
     const url = document.location.pathname 
-    expect(url).toContain('/') // TODO need to change it to test if url is equal to pressed buttom
+    const navBtnSelected = cont.querySelector('[class*="item-selected"]')
+    const pathFromElement = navBtnSelected.getAttribute("data-path")
+
+    expect(url).toContain(`${pathFromElement}`) // TODO need to change it to test if url is equal to pressed buttom
   })
 })

@@ -29,6 +29,7 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
           >
             {navMenuButtons.map((btn) => (
               <Menu.Item
+                data-path={`${btn.path}`}
                 className={`${btn.classNameValue}`}
                 key={btn.id}
                 onClick={() => history.push(`${btn.path}`)}
