@@ -1,24 +1,24 @@
 export const navMenuButtons: INavMenuButton [] = [
     {
-        id: 1,
+        id: "1",
         title: 'Início',
         path: '/',
         classNameValue: 'inicio',
     },
     {
-        id: 2,
+        id: "2",
         title: 'Contato',
         path: '/contato',
         classNameValue: 'contato',
     },
     {
-        id: 3,
+        id: "3",
         title: 'Sobre',
         path: '/sobre',
         classNameValue: 'sobre',
     },
     {
-        id: 4,
+        id: "4",
         title: 'Entrar',
         path: '/entrar',
         classNameValue: 'entrar',
@@ -26,7 +26,7 @@ export const navMenuButtons: INavMenuButton [] = [
 ]
 
 interface INavMenuButton {
-    id: number;
+    id: string;
     title: string;
     path: string;
     classNameValue: string;
