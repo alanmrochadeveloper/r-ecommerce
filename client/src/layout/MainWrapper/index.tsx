@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Layout, Menu } from 'antd'
 import logo from '../../assets/logo-placeholder.png'
 import { navMenuButtons } from '../../utils/mock/nav-menu'
@@ -13,8 +13,6 @@ interface IProps {
 const MainWrapper: React.FC<IProps> = ({ children }) => {
   const history = useHistory()
   const { pathname } = useLocation()
-
-  const [navBtns] = useState<any>(navMenuButtons)
 
   const handleMenuClick = (e: any) => {
     navigateToUrl(e.key)
