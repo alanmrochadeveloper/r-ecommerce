@@ -19,6 +19,12 @@ export const navMenuButtons: INavMenuButton [] = [
     },
     {
         id: "4",
+        title: 'Categorias',
+        path: '/categorias',
+        classNameValue: 'categories',
+    },
+    {
+        id: "5",
         title: 'Entrar',
         path: '/entrar',
         classNameValue: 'entrar',

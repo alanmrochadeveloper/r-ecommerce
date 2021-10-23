@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom';
+import Categories from '../components/Categories';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Home from '../pages/Home';
@@ -12,6 +13,7 @@ const Routes: React.FC<IProps> = () => {
         <Route exact path="/" component={Home} />
         <Route path="/contato" component={Contact} />
         <Route path="/sobre" component={About} />
+        <Route path="/categorias" component={Categories} />
         <Route path="/entrar" component={Login} />
     </Switch>
   </>

@@ -1,5 +1,7 @@
 import { render } from '@testing-library/react'
+import { createMemoryHistory } from 'history';
 import { act } from 'react-dom/test-utils'
+import { Router } from 'react-router'
 import App from './App'
 
 const cssFramework = process.env.REACT_APP_CSS_FRAMEWORK
@@ -10,7 +12,12 @@ let cont: any = null
 describe('Checking App Component', () => {
   beforeEach(async () => {
     await act(async () => {
-      const { container } = render(<App />)
+      const history = createMemoryHistory()
+      const { container } = render(
+        <Router history={history}>
+          <App />
+        </Router>,
+      )
       cont = container
     })
     return await cont
@@ -64,10 +71,10 @@ describe('Checking App Component', () => {
     })
   })
 
-  it('Should show in the class which item is selected',()=>{
-    const url = document.location.pathname 
+  it('Should show in the class which item is selected', () => {
+    const url = document.location.pathname
     const navBtnSelected = cont.querySelector('[class*="item-selected"]')
-    const pathFromElement = navBtnSelected.getAttribute("data-path")
+    const pathFromElement = navBtnSelected.getAttribute('data-path')
 
     expect(url).toContain(`${pathFromElement}`) // TODO need to change it to test if url is equal to pressed buttom
   })
