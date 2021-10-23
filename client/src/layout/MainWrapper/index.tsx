@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Layout, Menu } from 'antd'
 import logo from '../../assets/logo-placeholder.png'
 import { navMenuButtons } from '../../utils/mock/nav-menu'
@@ -12,12 +12,33 @@ interface IProps {
 }
 const MainWrapper: React.FC<IProps> = ({ children }) => {
   const history = useHistory()
-  const location = useLocation()
-  React.useEffect(() => {
-    console.log('Updated MainWrapper') // TODO remove log or even this useEffect later on
-    console.log(`location.pathname = ${location.pathname}`) // TODO remove this log 
-    console.log(`document.location.pathname = ${document.location.pathname}`) // TODO remove this log
-  })
+  const { pathname } = useLocation()
+
+  const handleMenuClick = (e: any) => {
+    navigateToUrl(e.key)
+  }
+
+  const navigateToUrl = (key: string) => {
+    navMenuButtons.forEach((btn, index) => {
+      if (btn.id === key) {
+        history.push(btn.path)
+      }
+    })
+  }
+  const getSelectedMenuItem = () => {
+    switch (pathname) {
+      case '/':
+        return '1'
+      case '/contato':
+        return '2'
+      case '/sobre':
+        return '3'
+      case '/entrar':
+        return '4'
+      default:
+        return '0'
+    }
+  }
 
   return (
     <>
@@ -34,14 +55,14 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
             }}
             className="nav-menu-container"
             mode="horizontal"
-            defaultSelectedKeys={['1']}
+            defaultSelectedKeys={[getSelectedMenuItem()]}
+            onClick={(e) => handleMenuClick(e)}
           >
             {navMenuButtons.map((btn) => (
               <Menu.Item
                 data-path={`${btn.path}`}
                 className={`${btn.classNameValue}`}
                 key={btn.id}
-                onClick={() => history.push(`${btn.path}`)}
               >
                 {btn.title}
               </Menu.Item>
