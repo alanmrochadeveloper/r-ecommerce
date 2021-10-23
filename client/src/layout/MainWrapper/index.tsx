@@ -19,25 +19,15 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
   }
 
   const navigateToUrl = (key: string) => {
-    navMenuButtons.forEach((btn, index) => {
+    navMenuButtons.forEach((btn) => {
       if (btn.id === key) {
         history.push(btn.path)
       }
     })
   }
   const getSelectedMenuItem = (): string => {
-    switch (pathname) {
-      case '/':
-        return '1'
-      case '/contato':
-        return '2'
-      case '/sobre':
-        return '3'
-      case '/entrar':
-        return '4'
-      default:
-        return '0'
-    }
+    const value = navMenuButtons.find((btn) => btn.path === pathname)
+    return value !== undefined ? value.id : '0'
   }
 
   return (
