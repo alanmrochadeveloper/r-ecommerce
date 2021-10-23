@@ -14,6 +14,8 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
   const history = useHistory()
   const { pathname } = useLocation()
 
+  const [navBtns] = useState<any>(navMenuButtons)
+
   const handleMenuClick = (e: any) => {
     navigateToUrl(e.key)
   }
@@ -25,7 +27,7 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
       }
     })
   }
-  const getSelectedMenuItem = () => {
+  const getSelectedMenuItem = (): string => {
     switch (pathname) {
       case '/':
         return '1'
