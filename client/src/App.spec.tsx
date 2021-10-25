@@ -1,8 +1,6 @@
-import { render } from '@testing-library/react'
-import { createMemoryHistory } from 'history';
 import { act } from 'react-dom/test-utils'
-import { Router } from 'react-router'
 import App from './App'
+import { render } from './utils/test-utils';
 
 const cssFramework = process.env.REACT_APP_CSS_FRAMEWORK
 
@@ -12,13 +10,10 @@ let cont: any = null
 describe('Checking App Component', () => {
   beforeEach(async () => {
     await act(async () => {
-      const history = createMemoryHistory()
-      const { container } = render(
-        <Router history={history}>
-          <App />
-        </Router>,
-      )
-      cont = container
+      await act(async () => {
+        const { container } = render(<App />)
+        cont = container
+      })
     })
     return await cont
   })

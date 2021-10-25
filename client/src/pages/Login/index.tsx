@@ -1,9 +1,14 @@
 import { Button, Form, Input } from 'antd'
 import React from 'react'
+import { useLocation } from 'react-router'
 import MainWrapper from '../../layout/MainWrapper'
 
 interface IProps {}
 const Login: React.FC<IProps> = () => {
+  // const { pathname } = document.location
+  const { pathname } = useLocation()
+  console.log('pathname = ', pathname)
+
   return (
     <>
       <MainWrapper>

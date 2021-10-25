@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
 import Login from '.'
+import { render } from '../../utils/test-utils'
 
 describe('Working with login screen', () => {
   const cssFramework = process.env.REACT_APP_CSS_FRAMEWORK
@@ -15,47 +15,41 @@ describe('Working with login screen', () => {
       }
     }
 
-  it(`Should have this css frameword in the screen rendered = ${cssFramework}`, async () => {
-    const { container } = render(<Login />)
-    const anyElementWithCssFramework = container.querySelectorAll(
+  let cont: any = null
+
+  beforeEach(async () => {
+    await act(async () => {
+      const { container } = render(<Login />)
+      cont = container
+    })
+
+    return cont
+  })
+
+  it(`Should have this css frameword in the screen rendered = ${cssFramework}`, () => {
+    const anyElementWithCssFramework = cont.querySelectorAll(
       `[class*="${cssFramework}"]`,
     )
-    await act(async () => {
-      expect(anyElementWithCssFramework.length).toBeGreaterThan(0)
-    })
+    expect(anyElementWithCssFramework.length).toBeGreaterThan(0)
   })
 
-  it('Should print username label on screen with Nome do usuário inside', async () => {
-    const { container } = render(<Login />)
-    const label = container.querySelector('label[for*="username"]')
-    await act(async () => {
-      expect(label?.innerHTML).toContain('Nome do usuário')
-    })
+  it('Should print username label on screen with Nome do usuário inside', () => {
+    const label = cont.querySelector('label[for*="username"]')
+    expect(label?.innerHTML).toContain('Nome do usuário')
   })
 
-  it('Should print password label on screen with Senha inside', async () => {
-    const { container } = render(<Login />)
-    const label = container.querySelector(`label[for*="password"]`)
-    await act(async() => {
-      expect(label?.textContent).toContain('Senha')
-    })
+  it('Should print password label on screen with Senha inside', () => {
+    const label = cont.querySelector(`label[for*="password"]`)
+    expect(label?.textContent).toContain('Senha')
   })
 
-  it('Should print input in the screen with type="text"', async () => {
-    const { container } = render(<Login />)
-    const input = container.querySelectorAll('input.username-input[type="text"]')
-    await act(async () => {
-      expect(input.length).toBeGreaterThan(0)
-    })
+  it('Should print input in the screen with type="text"', () => {
+    const input = cont.querySelectorAll('input.username-input[type="text"]')
+    expect(input.length).toBeGreaterThan(0)
   })
 
-  it('Should print password in the screen with type="password"', async () => {
-    const { container } = render(<Login />)
-    const input = container.querySelectorAll(
-      'input[type="password"]',
-    )
-    await act(async () => {
-      expect(input.length).toBeGreaterThan(0)
-    })
+  it('Should print password in the screen with type="password"', () => {
+    const input = cont.querySelectorAll('input[type="password"]')
+    expect(input.length).toBeGreaterThan(0)
   })
 })

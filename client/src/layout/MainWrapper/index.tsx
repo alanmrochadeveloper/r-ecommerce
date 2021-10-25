@@ -13,20 +13,18 @@ interface IProps {
 }
 const MainWrapper: React.FC<IProps> = ({ children }) => {
   const history = useHistory()
-  const { pathname } = useLocation()
+  const { pathname } = document.location
+  // const { pathname } = useLocation()
 
   const [currentWidth, setCurrentWidth] = useState<number>(0)
 
   React.useLayoutEffect(() => {
     const resizeWindow = () => {
-      // eslint-disable-next-line no-restricted-globals
       setCurrentWidth(window.innerWidth)
     }
     window.addEventListener('resize', resizeWindow)
 
     resizeWindow()
-
-    console.log('current window widht = ', currentWidth)
 
     return () => window.removeEventListener('resize', resizeWindow)
   }, [])
