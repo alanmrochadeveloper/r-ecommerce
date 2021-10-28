@@ -13,8 +13,7 @@ interface IProps {
 }
 const MainWrapper: React.FC<IProps> = ({ children }) => {
   const history = useHistory()
-  const { pathname } = document.location
-  // const { pathname } = useLocation()
+  const { pathname } = useLocation()
 
   const [currentWidth, setCurrentWidth] = useState<number>(0)
 

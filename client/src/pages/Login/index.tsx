@@ -1,13 +1,11 @@
 import { Button, Form, Input } from 'antd'
 import React from 'react'
-import { useLocation } from 'react-router'
+import { useHistory } from 'react-router'
 import MainWrapper from '../../layout/MainWrapper'
 
 interface IProps {}
 const Login: React.FC<IProps> = () => {
-  // const { pathname } = document.location
-  const { pathname } = useLocation()
-  console.log('pathname = ', pathname)
+  const history = useHistory()
 
   return (
     <>
@@ -46,6 +44,13 @@ const Login: React.FC<IProps> = () => {
               Enviar
             </Button>
           </Form.Item>
+          <Button
+            type="link"
+            className="cadastrar"
+            onClick={() => history.push('/cadastrar')}
+          >
+            Cadastrar
+          </Button>
         </Form>
       </MainWrapper>
     </>

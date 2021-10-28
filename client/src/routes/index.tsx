@@ -5,6 +5,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
+import Registration from '../pages/Register';
 
 interface IProps {}
 const Routes: React.FC<IProps> = () => {
@@ -15,6 +16,7 @@ const Routes: React.FC<IProps> = () => {
         <Route path="/sobre" component={About} />
         <Route path="/categorias" component={Categories} />
         <Route path="/entrar" component={Login} />
+        <Route path="/cadastrar" component={Registration} />
     </Switch>
   </>
 }

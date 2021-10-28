@@ -52,4 +52,13 @@ describe('Working with login screen', () => {
     const input = cont.querySelectorAll('input[type="password"]')
     expect(input.length).toBeGreaterThan(0)
   })
+
+  it("Should print button on the screen with text = 'Cadastrar'", () => {
+    const buttom = cont.querySelector('button[class*="cadastrar"]')
+    expect(buttom.textContent).toContain('Cadastrar')
+  })
+	it('should leave a image on the screen', ()=>{
+		const buttom = cont.querySelector('button[class*="cadastro"')
+		expect(buttom.length).toBeGreaterThan(0);
+	})
 })
