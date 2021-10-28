@@ -58,7 +58,7 @@ describe('Working with login screen', () => {
     expect(buttom.textContent).toContain('Cadastrar')
   })
 	it('should leave a image on the screen', ()=>{
-		const buttom = cont.querySelector('button[class*="cadastro"')
+		const buttom = cont.querySelectorAll('button[class*="cadastrar"')
 		expect(buttom.length).toBeGreaterThan(0);
 	})
 })

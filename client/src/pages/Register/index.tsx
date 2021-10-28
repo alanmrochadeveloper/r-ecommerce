@@ -1,4 +1,4 @@
-import { Button, Form, Input } from 'antd'
+import { Button, Form, Input, Typography } from 'antd'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import ContentWrapper from '../../layout/ContentWrapper'
@@ -10,6 +10,7 @@ const Registration: React.FC<IProps> = () => {
   return (
     <>
       <ContentWrapper>
+        <Typography.Title level={4} >Registrar</Typography.Title>
         <Form wrapperCol={{ span: 8 }} labelCol={{ span: 8 }}>
           <Form.Item
             label="Primeiro nome"
@@ -33,7 +34,7 @@ const Registration: React.FC<IProps> = () => {
             className="email-label"
             rules={[{ required: true, message: 'Digite o seu email' }]}
           >
-            <Input className="email-input" />
+            <Input className="email-input" type="email" />
           </Form.Item>
           <Form.Item
             label="Senha"
