@@ -21,8 +21,22 @@ describe('Acceptance test', () => {
       .should('eq', 200)
   })
 
-  it('Should show in the inital page the api answer rendered in the document screen', () => {
+  it('Should show in the initial page the api answer rendered in the document screen', () => {
     cy.visit(basePath)
     cy.get('.api-container').contains('It is working')
+  })
+
+  it('Should go to registration page and print Registrar text inside h4', () => {
+    cy.visit(basePath)
+    cy.get('li[class*="entrar"]')
+      .should('be.visible')
+      // .wait(500)
+      .click()
+      .get('button[class*="cadastrar"]')
+      .should('be.visible')
+      // .wait(500)
+      .click()
+      .get('h4')
+      .contains('Registrar')
   })
 })
