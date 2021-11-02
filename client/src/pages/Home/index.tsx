@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'antd'
 import Title from 'antd/lib/typography/Title'
 import axios from 'axios'
 import { api } from '../../utils/globals'
@@ -30,6 +29,14 @@ const Home: React.FC<IProps> = () => {
       <>
         <Title>ROCHA-ECOMMERCE: </Title>
         <div className="api-container"> API = {state.test}</div>
+        <Title level={3}>Produtos</Title>
+        <div className="produtos">
+          {['produto1', 'produto2', 'produto3'].map((prod) => (
+            <div className={`produto ${prod}`} key={prod}>
+              {prod.toString()}
+            </div>
+          ))}
+        </div>
       </>
     </MainWrapper>
   )
