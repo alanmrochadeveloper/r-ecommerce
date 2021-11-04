@@ -38,6 +38,7 @@ const Login: React.FC<IProps> = () => {
 						]}
 					>
 						<Input.Password className="password-input" />
+<<<<<<< HEAD
 					</Form.Item><Form.Item
 						className="password-label"
 						label="Senha do usuário"
@@ -47,12 +48,15 @@ const Login: React.FC<IProps> = () => {
 						]}
 					>
 						<Input.Password className="password-input" />
+=======
+>>>>>>> 993e7a90f0eabd561441261bb4e0124c2ebfdfa2
 					</Form.Item>
 					<Form.Item wrapperCol={{ offset: 4, span: 16 }}>
 						<Button type="primary" htmlType="submit">
 							Enviar
 						</Button>
 					</Form.Item>
+<<<<<<< HEAD
 					<Form.Item>
 						<Button
 							type="link"
@@ -62,6 +66,15 @@ const Login: React.FC<IProps> = () => {
 							Cadastrar
 						</Button>
 					</Form.Item>
+=======
+					<Button
+						type="link"
+						className="cadastrar"
+						onClick={() => history.push('/cadastrar')}
+					>
+						Cadastrar
+					</Button>
+>>>>>>> 993e7a90f0eabd561441261bb4e0124c2ebfdfa2
 				</Form>
 			</MainWrapper>
 		</>
