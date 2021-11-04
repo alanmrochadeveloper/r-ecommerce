@@ -38,19 +38,19 @@ const Login: React.FC<IProps> = () => {
 						]}
 					>
 						<Input.Password className="password-input" />
+					</Form.Item><Form.Item
+						className="password-label"
+						label="Senha do usuário"
+						name="password"
+						rules={[
+							{ required: true, message: 'Por favor entre com o sua senha' },
+						]}
+					>
+						<Input.Password className="password-input" />
 					</Form.Item>
 					<Form.Item wrapperCol={{ offset: 4, span: 16 }}>
 						<Button type="primary" htmlType="submit">
 							Enviar
-						</Button>
-					</Form.Item>
-					<Form.Item>
-						<Button
-							type="link"
-							className="cadastrar"
-							onClick={() => history.push('/cadastrar')}
-						>
-							Cadastrar
 						</Button>
 					</Form.Item>
 					<Form.Item>
