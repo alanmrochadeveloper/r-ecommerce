@@ -58,7 +58,7 @@ export const navMenuButtons: INavMenuButton [] = [
         classNameValue: 'entrar',
         isSubMenu: false,
         isRightMenu: true,
-        offset: 650,
+        offset: 700,
     },
 ]
 

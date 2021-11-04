@@ -5,8 +5,10 @@ import { navMenuButtons } from '../../utils/mock/nav-menu'
 import { appName } from '../../utils/globals'
 import { useHistory, useLocation } from 'react-router-dom'
 import SubMenu from 'antd/lib/menu/SubMenu'
+import ContentWrapper from '../ContentWrapper'
+import MainFooter from '../Footer'
 
-const { Header, Content, Footer } = Layout
+const { Header, Footer } = Layout
 
 interface IProps {
 	children: any
@@ -48,7 +50,7 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
 	return (
 		<>
 			<Layout className="layout">
-				<Header style={{ backgroundColor: '#d53f3f', marginBottom: '2rem' }}>
+				<Header style={{ backgroundColor: '#d53f3f' }}>
 					<div className="logo">
 						<img src={logo} alt={`logo tipo ${appName}`} />
 					</div>
@@ -58,7 +60,6 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
 							color: 'white',
 							borderColor: '#d53f3f',
 						}}
-						className="nav-menu-container"
 						mode="horizontal"
 						defaultSelectedKeys={[getSelectedMenuItem()]}
 						onClick={(e) => handleMenuClick(e)}
@@ -93,12 +94,10 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
 						})}
 					</Menu>
 				</Header>
-				<Content style={{ padding: '0 50px', minHeight: '85vh' }}>
+				<ContentWrapper>
 					<div className="site-layout-content">{children}</div>
-				</Content>
-				<Footer style={{ textAlign: 'center' }}>
-					{`${appName} `}&copy;{` ${new Date().getFullYear()}`}
-				</Footer>
+				</ContentWrapper>
+        <MainFooter />
 			</Layout>
 		</>
 	)

@@ -53,7 +53,7 @@ const Registration: React.FC<IProps> = () => {
 						<Input className="confirm-password-input" type="password" />
 					</Form.Item>
 					<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-						<Button type="primary" name="buttonSubmit" htmlType="submit">
+                <Button type="primary" name="buttonSubmit" htmlType="submit">
 							Registrar
 						</Button>
 					</Form.Item>

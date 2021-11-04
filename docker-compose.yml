@@ -26,5 +26,7 @@ services:
         environment: 
             POSGRES_USERNAME:  "postgres"
             POSTGRES_PASSWORD: "#Postgres123"
+        ports:
+          - 15432:5432
         volumes:
         - ./db:/var/postgres/

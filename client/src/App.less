@@ -1,9 +1,5 @@
 @import '~antd/dist/antd.less';
-IProps
 .site-layout-content {
-    min-height: 280px;
-    padding: 24px;
-    background: #fff;
   }
   .logo {
     float: left;
@@ -17,4 +13,21 @@ IProps
   .ant-row-rtl .logo {
     float: right;
     margin: 16px 0 16px 24px;
+  }
+  .ant-menu-title-content {
+    text-transform: uppercase;
+  }
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: transparent !important;
+    border-right: 0.5px solid #000;
+  }
+  .ant-menu-item-selected .ant-menu-title-content {
+    font-weight: bold !important;
+  }
+  .ant-menu-submenu .-title-content {
+    text-transform: uppercase;
+  }
+
+  .ant-menu-submenu-selected .-title-content {
+    font-weight: bold !important;
   }

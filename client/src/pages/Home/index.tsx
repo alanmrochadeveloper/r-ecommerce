@@ -1,18 +1,22 @@
 import React from 'react'
 import Title from 'antd/lib/typography/Title'
 import axios from 'axios'
-import { api } from '../../utils/globals'
+import { api, appName } from '../../utils/globals'
 import MainWrapper from '../../layout/MainWrapper'
 import ProductDetail from '../../components/ProductDetail'
+import { Button } from 'antd'
+import {useHistory} from 'react-router-dom'
+
 
 interface IProps { }
 const Home: React.FC<IProps> = () => {
 	const [state, setState] = React.useState<any>({})
-
-	const getInitTestValue = React.useCallback(async () => {
-		try {
-			const response = await axios(`${api}/init-test/test`)
-			setState((prevState: any) => ({ ...prevState, test: response.data }))
+  const history = useHistory() 
+  const getInitTestValue = React.useCallback(async () => { try {
+		//	const response = await axios(`${api}/init-test/test`) // TODO for testing purpose, should be removed later
+			const responseBr = await axios(`${api}/init-test/teste`)
+			const responseDatabase = await axios(`${api}/init-test/database`)
+			setState((prevState: any) => ({ ...prevState, test: responseBr.data, database: responseDatabase.data}))
 		} catch (e) {
 			console.log(`error = ${JSON.stringify(e)}`)
 		}
@@ -25,12 +29,12 @@ const Home: React.FC<IProps> = () => {
 		}
 	}, [])
 
-<<<<<<< HEAD
 	return (
 		<MainWrapper>
 			<>
-				<Title>ROCHA-ECOMMERCE: </Title>
+				<Title>{appName}-ECOMMERCE</Title>
 				<div className="api-container"> API = {state.test}</div>
+				<div className="db-container"> Database = {state.database}</div>
 				<Title level={3}>Produtos</Title>
 				<div className="produtos">
 					{['produto1', 'produto2', 'produto3'].map((prod) => (
@@ -40,25 +44,12 @@ const Home: React.FC<IProps> = () => {
 							</ProductDetail>
 						</div>
 					))}
+					<Button htmlType='button' type='ghost' onClick={()=>{history.push('/dashboard')}} >
+								ir para portal do cliente
+					</Button>
 				</div>
 			</>
 		</MainWrapper>
 	)
-=======
-  return (
-    <MainWrapper>
-      <>
-        <Title>ROCHA-ECOMMERCE: </Title>
-        <div className="api-container"> API = {state.test}</div>
-        <Title level={3}>Produtos</Title>
-        <div className="produtos">
-          {['produto1', 'produto2', 'produto3'].map((prod) => (
-            <div className={`produto ${prod}`}>{prod.toString()}</div>
-          ))}
-        </div>
-      </>
-    </MainWrapper>
-  )
->>>>>>> 993e7a90f0eabd561441261bb4e0124c2ebfdfa2
 }
 export default Home

@@ -2,9 +2,9 @@ const basePath = '/'
 const api = Cypress.env('api')
 
 describe('Acceptance test', () => {
-  it('Should visit the site and print ROCHA on the screen', () => {
+  it('Should visit the site and print Okiama on the screen', () => {
     cy.visit(basePath)
-    cy.get('.App').contains('ROCHA')
+    cy.get('.App').contains('Okiama')
   })
 
   it('Should visit website and encounters 3 buttons ["Início", "Contato", "Sobre","Entrar"]', () => {
@@ -23,7 +23,7 @@ describe('Acceptance test', () => {
 
   it('Should show in the initial page the api answer rendered in the document screen', () => {
     cy.visit(basePath)
-    cy.get('.api-container').contains('It is working')
+    cy.get('.api-container').contains('Está funcionando!')
   })
 
   it('Should go to registration page and print Registrar text inside h4', () => {
