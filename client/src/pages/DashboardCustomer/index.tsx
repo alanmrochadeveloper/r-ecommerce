@@ -18,9 +18,12 @@ interface IProps {
 
 const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
   const [collapsed, setCollapsed] = React.useState<boolean>(false);
+  const [contentMarginLeft, setContentMarginLeft] = React.useState<number>(200);
+
   const onCollapseHandler =(collapsedValue: boolean) => {
         console.log('collapsedValue ', collapsedValue);
         setCollapsed(collapsedValue);
+        setContentMarginLeft(collapsed? 200: 80);
     }
 
   return (
@@ -58,7 +61,7 @@ const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
           }
         </Menu>
       </Sider>
-      <span className='spacer' style={{ marginLeft: 200, padding: 1, minHeight: '100vh' }}></span>
+      <span className='spacer' style={{ marginLeft: contentMarginLeft, padding: 1, minHeight: '100vh' }}></span>
       <ContentWrapper>
         <Title level={2}>Portal do cliente</Title>
         {children}
