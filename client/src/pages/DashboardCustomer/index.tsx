@@ -5,8 +5,9 @@ import { navMenuSiderDashboardButtons } from '../../utils/mock/nav-menu-sider-da
 import MainFooter from '../../layout/Footer';
 // import {ShoppingCartOutlined, UserOutlined,DollarOutlined } from '@ant-design/icons';
 import { iconPicker } from '../../utils/icon-picker';
-import { appName } from '../../utils/globals'
-import logo from '../../assets/logo-placeholder.png'
+import { appName } from '../../utils/globals';
+import logo from '../../assets/logo-placeholder.png';
+import shortLogo from '../../assets/okiama-short-logo.jpg';
 
 const { Title } = Typography;
 const { Sider } = Layout;
@@ -20,11 +21,11 @@ const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
   const [collapsed, setCollapsed] = React.useState<boolean>(false);
   const [contentMarginLeft, setContentMarginLeft] = React.useState<number>(200);
 
-  const onCollapseHandler =(collapsedValue: boolean) => {
-        console.log('collapsedValue ', collapsedValue);
-        setCollapsed(collapsedValue);
-        setContentMarginLeft(collapsed? 200: 80);
-    }
+  const onCollapseHandler = (collapsedValue: boolean) => {
+    console.log('collapsedValue ', collapsedValue);
+    setCollapsed(collapsedValue);
+    setContentMarginLeft(collapsed ? 200 : 80);
+  }
 
   return (
     <div style={{ display: 'flex' }}>
@@ -41,10 +42,13 @@ const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
         collapsed={collapsed}
         onCollapse={onCollapseHandler}
       >
-      <div className="logo">
-						<img src={logo} alt={`logo tipo ${appName}`} />
-					</div>
-        <Menu 
+        <div className="logo" style={{ width: collapsed ? 80 : 200, textAlign: 'center', margin:'20px 0' }} >
+          <img
+            src={collapsed ? shortLogo : logo}
+            alt={`logo tipo ${appName}`}
+            style={{ maxWidth: collapsed ? 40 : 100 }} />
+        </div>
+        <Menu
           mode="inline"
           defaultSelectedKeys={['1']}
           style={{
@@ -54,7 +58,7 @@ const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
           }}>
           {
             navMenuSiderDashboardButtons.map(({ id, title, url, icon }) => (
-              <Item key={id} icon={iconPicker( icon )}>
+              <Item key={id} icon={iconPicker(icon)}>
                 {title}
               </Item>
             ))
@@ -66,7 +70,7 @@ const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
         <Title level={2}>Portal do cliente</Title>
         {children}
       </ContentWrapper>
-      <MainFooter style={{ position:'fixed', top: '94vh', width: '100vw', overflow: 'auto', backgroundColor: 'transparent', left: 10}} />
+      <MainFooter style={{ position: 'fixed', top: '94vh', width: '100vw', overflow: 'auto', backgroundColor: 'transparent', left: 10 }} />
     </div>
   )
 }
