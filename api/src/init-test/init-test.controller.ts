@@ -7,11 +7,19 @@ export class InitTestController {
     return "It's working!"
   }
   @Get('teste')
-  teste(){
+  teste() {
     return "Está funcionando!"
   }
+  @Get('api/status')
+  apiStatus() {
+    return "OK"
+  }
   @Get('database')
-  database(){
-      return 'Banco está funcionando!'
+  database() {
+    return "Banco está funcionando!"
+  }
+  @Get('database/status')
+  databaseStatus() {
+    return "OK"
   }
 }

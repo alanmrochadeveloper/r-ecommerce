@@ -5,6 +5,8 @@ import { navMenuSiderDashboardButtons } from '../../utils/mock/nav-menu-sider-da
 import MainFooter from '../../layout/Footer';
 // import {ShoppingCartOutlined, UserOutlined,DollarOutlined } from '@ant-design/icons';
 import { iconPicker } from '../../utils/icon-picker';
+import { appName } from '../../utils/globals'
+import logo from '../../assets/logo-placeholder.png'
 
 const { Title } = Typography;
 const { Sider } = Layout;
@@ -30,14 +32,15 @@ const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
           position: 'fixed',
           left: 0,
           backgroundColor: '#d53f3f',
+          zIndex: 1
         }}
         collapsible
         collapsed={collapsed}
-        onCollapse={(e)=>onCollapseHandler(e)}
+        onCollapse={onCollapseHandler}
       >
-      <div>
-      logo
-      </div>
+      <div className="logo">
+						<img src={logo} alt={`logo tipo ${appName}`} />
+					</div>
         <Menu 
           mode="inline"
           defaultSelectedKeys={['1']}

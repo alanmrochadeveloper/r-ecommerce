@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Categories from '../components/Categories';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
@@ -7,7 +7,9 @@ import DashboardCustomerWrapper from '../pages/DashboardCustomer';
 import DashboardCustomerHome from '../pages/DashboardCustomerHome';
 import DashboardCustomerSettings from '../pages/DashboardCustomerSettings';
 import Home from '../pages/Home';
+import NotFound from '../pages/NotFound';
 import Registration from '../pages/Register';
+import TestApi from '../pages/TestApi';
 
 interface IProps { }
 const Routes: React.FC<IProps> = () => {
@@ -18,6 +20,7 @@ const Routes: React.FC<IProps> = () => {
 				<Route path="/contato" component={Contact} />
 				<Route path="/sobre" component={About} />
 				<Route path="/categorias" component={Categories} />
+        <Route  path ="/test" component={TestApi} />
 				<Route path="/entrar" component={
 					React.lazy(() => import('../pages/Login'))
 				} />
@@ -30,6 +33,8 @@ const Routes: React.FC<IProps> = () => {
 							</Switch>	
 					</DashboardCustomerWrapper>)
 				} />
+        <Route path="/404" component={NotFound} />
+        <Redirect from="*" to="/404" />
 			</Switch>
 		</Suspense>
 	</>

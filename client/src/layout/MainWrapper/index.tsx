@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Layout, Menu } from 'antd'
-import logo from '../../assets/logo-placeholder.png'
 import { navMenuButtons } from '../../utils/mock/nav-menu'
 import { appName } from '../../utils/globals'
+import logo from '../../assets/logo-placeholder.png'
 import { useHistory, useLocation } from 'react-router-dom'
 import SubMenu from 'antd/lib/menu/SubMenu'
 import ContentWrapper from '../ContentWrapper'
 import MainFooter from '../Footer'
 
-const { Header, Footer } = Layout
+const { Header } = Layout
 
 interface IProps {
 	children: any
@@ -40,7 +40,7 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
 				history.push(btn.path)
 			}
 		})
-	}
+  }
 
 	const getSelectedMenuItem = (): string => {
 		const value = navMenuButtons.find((btn) => btn.path === pathname)

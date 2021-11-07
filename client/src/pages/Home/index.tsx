@@ -6,6 +6,7 @@ import MainWrapper from '../../layout/MainWrapper'
 import ProductDetail from '../../components/ProductDetail'
 import { Button } from 'antd'
 import {useHistory} from 'react-router-dom'
+import Block from '../../layout/Block'
 
 
 interface IProps { }
@@ -31,7 +32,7 @@ const Home: React.FC<IProps> = () => {
 
 	return (
 		<MainWrapper>
-			<>
+			<Block>
 				<Title>{appName}-ECOMMERCE</Title>
 				<div className="api-container"> API = {state.test}</div>
 				<div className="db-container"> Database = {state.database}</div>
@@ -48,7 +49,7 @@ const Home: React.FC<IProps> = () => {
 								ir para portal do cliente
 					</Button>
 				</div>
-			</>
+			</Block>
 		</MainWrapper>
 	)
 }

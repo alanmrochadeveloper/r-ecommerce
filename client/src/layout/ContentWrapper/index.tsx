@@ -7,7 +7,7 @@ interface IProps {
   children: any
 }
 const ContentWrapper: React.FC<IProps> = ({ children }) => {
-  return <Content style={{ minHeight: '80vh', background: '#e2e2e2', margin: '2rem', padding: '2rem', borderRadius: 12 }}>
+  return <Content style={{ minHeight: '80vh', background: '#e2e2e2', margin: '2rem', padding: '2rem', borderRadius: 6 }}>
     {children}
   </Content>
 }
