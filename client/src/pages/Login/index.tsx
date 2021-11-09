@@ -7,7 +7,8 @@ interface IProps { }
 const Login: React.FC<IProps> = () => {
   const history = useHistory()
 
-  const { Item}= Form;
+  const { Item } = Form;
+  const { Password } = Input;
 
   return (
     <>
@@ -39,7 +40,7 @@ const Login: React.FC<IProps> = () => {
               { required: true, message: 'Por favor entre com o sua senha' },
             ]}
           >
-            <Input.Password className="password-input" />
+            <Password className="password-input" />
           </Item>
           <Item
             className="password-label"
@@ -49,7 +50,7 @@ const Login: React.FC<IProps> = () => {
               { required: true, message: 'Por favor entre com o sua senha' },
             ]}
           >
-            <Input.Password className="password-input" />
+            <Password className="password-input" />
           </Item>
           <Item wrapperCol={{ offset: 4, span: 16 }}>
             <Button type="primary" htmlType="submit">

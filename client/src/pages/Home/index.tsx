@@ -46,7 +46,7 @@ const Home: React.FC<IProps> = () => {
             </div>
           </Block>
         ))}
-        <Button htmlType='button' type='ghost' onClick={() => { history.push('/dashboard') }} >
+        <Button htmlType='button' type='ghost' onClick={() => { history.push('/dashboard/inicio') }} >
           ir para portal do cliente
         </Button>
       </div>

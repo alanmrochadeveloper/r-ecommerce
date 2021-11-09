@@ -6,5 +6,6 @@ const Categories: React.FC<IProps> = () => {
   return (
       <MainWrapper>Categories</MainWrapper>
    )
+  
 }
 export default Categories

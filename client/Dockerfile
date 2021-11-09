@@ -1,4 +1,4 @@
-FROM node:15-alpine
+Fgruvbox ROM node:15-alpine
 
 WORKDIR /home/app/client
 

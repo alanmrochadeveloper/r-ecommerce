@@ -1,19 +1,25 @@
 export const navMenuSiderDashboardButtons: ISiderNavBarDashboard[] = [
   {
     id: 1,
-    title: 'Compras',
-    url: '/minhas-compras',
-    icon: 'ShoppingCartOutlined'
+    title: 'início',
+    url: 'inicio',
+    icon: 'HomeOutlined'
   },
   {
     id: 2,
-    title: 'Configurações',
-    url: '/minhas-configuracoes',
-    icon: 'UserOutlined'
+    title: 'compras',
+    url: 'compras',
+    icon: 'ShoppingCartOutlined'
   },
   {
     id: 3,
-    title: 'Acompanhamento',
+    title: 'configurações',
+    url: 'configuracoes',
+    icon: 'UserOutlined'
+  },
+  {
+    id: 4,
+    title: 'acompanhamento',
     url: 'acompanhamento',
     icon: 'DollarOutlined'
   }
