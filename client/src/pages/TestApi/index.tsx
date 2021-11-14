@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import Block from '../../layout/Block';
 import MainWrapper from '../../layout/MainWrapper';
-import { api } from '../../utils/globals';
+import {baseApiUrl } from '../../utils/globals';
 import { Status } from './style';
 
 interface IProps {
@@ -16,7 +16,7 @@ const TestApi: React.FC<IProps> = ({ children }) => {
 
   const fetchApiResponse = React.useCallback(async () => {
     try {
-      const { data } = await axios(`${api}/init-test/api/status`)
+      const { data } = await axios(`${baseApiUrl}/init-test/api/status`)
       setApiStatus(data)
     }
     catch (e: any) {
@@ -25,7 +25,7 @@ const TestApi: React.FC<IProps> = ({ children }) => {
   }, [])
   const fetchDatabaseResponse = React.useCallback(async () => {
     try {
-      const { data } = await axios(`${api}/init-test/database/status`)
+      const { data } = await axios(`${baseApiUrl}/init-test/database/status`)
       setDatabase(data)
     }
     catch (e: any) {

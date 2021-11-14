@@ -1,13 +1,14 @@
 import React from 'react'
 import Title from 'antd/lib/typography/Title'
 import axios from 'axios'
-import { api, appName } from '../../utils/globals'
+import { appName } from '../../utils/globals'
 import MainWrapper from '../../layout/MainWrapper'
 import ProductDetail from '../../components/ProductDetail'
 import { Button } from 'antd'
 import { useHistory } from 'react-router-dom'
 import Block from '../../layout/Block'
 import { products, Product } from '../../utils/mock/products-mock'
+import api, { EndPoints } from '../../api/axios'
 
 
 interface IProps { }
@@ -17,8 +18,10 @@ const Home: React.FC<IProps> = () => {
   const getInitTestValue = React.useCallback(async () => {
     try {
       //	const response = await axios(`${api}/init-test/test`) // TODO for testing purpose, should be removed later
-      const responseBr = await axios(`${api}/init-test/teste`)
-      const responseDatabase = await axios(`${api}/init-test/database`)
+     // const responseBr = await axios(`${api}/init-test/teste`)
+      //const responseDatabase = await axios(`${api}/init-test/database`)
+      const responseBr = await api(`${EndPoints.TEST}`);
+      const responseDatabase = await api(`${EndPoints.TEST_DB}`)
       setState((prevState: any) => ({ ...prevState, test: responseBr.data, database: responseDatabase.data }))
     } catch (e) {
       console.log(`error = ${JSON.stringify(e)}`)
