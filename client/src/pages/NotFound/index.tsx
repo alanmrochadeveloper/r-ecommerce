@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
+import MainWrapper from "../../layout/MainWrapper";
 
-const NotFound = ()=>{
-    return (
+const NotFound = () => {
+  return (
     <>
-      <div>
-        Página não encontrada!
-      </div>
+      <MainWrapper>
+        <div>Página não encontrada!</div>
+      </MainWrapper>
     </>
-    )
-  }
+  );
+};
 
-  export default NotFound;
+export default NotFound;

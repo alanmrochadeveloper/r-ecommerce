@@ -1,5 +1,5 @@
 import React from 'react'
-import api, { EndPoints } from '../../api/axios'
+import api, { UsersEndPoints } from '../../api/axios'
 import { IUser } from '../../types/interfaces'
 import { Typography } from 'antd'
 import MainWrapper from '../../layout/MainWrapper';
@@ -10,7 +10,7 @@ const Usuarios: React.FC<IProps> = () => {
     const [users, setUsers] = React.useState<IUser[]>()
     const fetchUsers = React.useCallback(async () => {
         try {
-            const response = await api(EndPoints.USERS)
+            const response = await api(UsersEndPoints.FIND_ALL)
             setUsers(response.data)
         } catch (error) {
             console.log(`Usuários não encontrados!`)
@@ -25,16 +25,18 @@ const Usuarios: React.FC<IProps> = () => {
         <MainWrapper>
             <div>
                 <Title level={2}>Usuários</Title>
+                <ul style={{ listStyle: 'none'}}>
                 {users ? (
                     users.map((user) => (
-                        <div>
+                        <li>
                             <span>Email: </span>
                             <span>{user.email}</span>
-                        </div>
+                        </li>
                     ))
                 ) : (
                     <div>Carregando...</div>
                 )}
+                </ul>
             </div>
         </MainWrapper>
     )

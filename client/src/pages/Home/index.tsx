@@ -7,7 +7,7 @@ import ProductDetail from '../../components/ProductDetail'
 import { Button } from 'antd'
 import { useHistory } from 'react-router-dom'
 import Block from '../../layout/Block'
-import { products, Product } from '../../utils/mock/products-mock'
+import { products, IProduct } from '../../utils/mock/products-mock'
 import api, { EndPoints } from '../../api/axios'
 
 
@@ -42,7 +42,7 @@ const Home: React.FC<IProps> = () => {
       <div className="db-container"> Database = {state.database}</div>
       <Title level={3}>Produtos</Title>
       <div className="produtos">
-        {products.map(({ id, title, description, image, category }: Product) => (
+        {products.map(({ id, title, description, image, category }: IProduct) => (
           <Block>
             <div className={`produto ${title}`} key={id}>
               <ProductDetail product={{ id, title, description, image, category }} />

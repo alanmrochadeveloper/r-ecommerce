@@ -23,7 +23,7 @@ const Routes: React.FC<IProps> = () => {
                     <Route exact path="/" component={Home} />
                     <Route path="/contato" component={Contact} />
                     <Route path="/sobre" component={About} />
-                    <Route path="/categorias" component={Categories} />
+                    <Route path="/categorias/:categoria" component={Categories} />
                     <Route path="/test" component={TestApi} />
                     <Route
                         path="/entrar"

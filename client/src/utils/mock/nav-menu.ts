@@ -32,21 +32,21 @@ export const navMenuButtons: INavMenuButton [] = [
         subMenu: [
             {
                 id: '41',
-                title: 'sub1',
-                path: 'sub1',
-                classNameValue: 'sub1'
+                title: 'calca',
+                path: 'calca',
+                classNameValue: 'calca'
             },
             {
                 id: '42',
-                title: 'sub2',
-                path: 'sub2',
-                classNameValue: 'sub2'
+                title: 'bone',
+                path: 'bone',
+                classNameValue: 'bone'
             },
             {
                 id: '43',
-                title: 'sub3',
-                path: 'sub3',
-                classNameValue: 'sub3'
+                title: 'cueca',
+                path: 'cueca',
+                classNameValue: 'cueca'
             },
         ],
         isRightMenu: false

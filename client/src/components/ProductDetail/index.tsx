@@ -1,12 +1,12 @@
 import React from 'react'
 import { Typography } from 'antd'
-import { Product } from '../../utils/mock/products-mock'
+import { IProduct } from '../../utils/mock/products-mock'
 import productImage from '../../assets/mock-product.jpeg'
 
 const { Title } = Typography
 
 interface IProps {
-    product: Product
+    product: IProduct
 }
 
 const ProductDetail: React.FC<IProps> = ({ product }) => {
