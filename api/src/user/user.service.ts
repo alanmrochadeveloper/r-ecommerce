@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { User } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
@@ -22,7 +23,11 @@ export class UserService {
     return `This action returns a #${id} user`;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
+  async createUser(createUserDto: CreateUserDto): Promise<User[]> {
+    return [];
+  }
+
+  updateUser(id: number, updateUserDto: UpdateUserDto) {
     return `This action updates a #${id} user ${JSON.stringify(updateUserDto)}`;
   }
 

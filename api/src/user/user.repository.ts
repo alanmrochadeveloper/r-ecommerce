@@ -6,7 +6,7 @@ import { User } from './entities/user.entity';
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
-  async buscarPorId(id: string): Promise<User> {
+  async getById(id: string): Promise<User> {
     try {
       const user = this.find({ id });
       return user;
@@ -15,20 +15,20 @@ export class UserRepository extends Repository<User> {
     }
   }
 
-  async buscarTodos(): Promise<User[]> {
+  async getAll(): Promise<User[]> {
     return this.find();
   }
 
-  async criar(criarUser: CreateUserDto): Promise<User> {
+  async createUser(criarUser: CreateUserDto): Promise<User> {
     return this.save(criarUser);
   }
 
-  async atualizar(modificarUser: UpdateUserDto, id: string): Promise<User> {
+  async updateUser(modificarUser: UpdateUserDto, id: string): Promise<User> {
     await this.update(modificarUser, id);
-    return await this.buscarPorId(id);
+    return await this.getById(id);
   }
 
-  async remover(id): Promise<User> {
+  async remover(id: string): Promise<User> {
     return this.delete({ id });
   }
 }

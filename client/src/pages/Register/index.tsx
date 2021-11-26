@@ -57,7 +57,7 @@ const Registration: React.FC<IProps> = () => {
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
               <Button type="primary" name="buttonSubmit" htmlType="submit">
                 Registrar
-              </Button>
+              *</Button>
             </Form.Item>
           </Form>
         </ContentWrapper>
