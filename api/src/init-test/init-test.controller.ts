@@ -20,7 +20,6 @@ export class InitTestController {
   }
   @Get('database/status')
   databaseStatus() {
-    let test = 'teste'
     return "OK"
   }
 }
