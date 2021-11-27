@@ -8,6 +8,7 @@ import { iconPicker } from '../../utils/icon-picker';
 import { appName } from '../../utils/globals';
 import logo from '../../assets/logo-placeholder.png';
 import shortLogo from '../../assets/okiama-short-logo.jpg';
+import { useHistory } from 'react-router-dom';
 
 const { Title } = Typography;
 const { Sider } = Layout;
@@ -20,6 +21,7 @@ interface IProps {
 const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
   const [collapsed, setCollapsed] = React.useState<boolean>(false);
   const [contentMarginLeft, setContentMarginLeft] = React.useState<number>(200);
+  const history = useHistory();
 
   const onCollapseHandler = (collapsedValue: boolean) => {
     console.log('collapsedValue ', collapsedValue);
@@ -42,7 +44,7 @@ const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
         collapsed={collapsed}
         onCollapse={onCollapseHandler}
       >
-        <div className="logo" style={{ width: collapsed ? 80 : 200, textAlign: 'center', margin:'20px 0' }} >
+        <div className="logo" style={{ width: collapsed ? 80 : 200, textAlign: 'center', margin: '20px 0' }} >
           <img
             src={collapsed ? shortLogo : logo}
             alt={`logo tipo ${appName}`}
@@ -58,7 +60,10 @@ const DashboardCustomerWrapper: React.FC<IProps> = ({ children }) => {
           }}>
           {
             navMenuSiderDashboardButtons.map(({ id, title, url, icon }) => (
-              <Item key={id} icon={iconPicker(icon)}>
+              <Item key={id} icon={iconPicker(icon)} onClick={() => {
+                history.push(`${url}`);
+              }}>
+                {/*console.log(`history = ${JSON.stringify(history)}`)*/}
                 {title}
               </Item>
             ))

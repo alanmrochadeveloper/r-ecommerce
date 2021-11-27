@@ -11,7 +11,7 @@ const DashboardSettings: React.FC<IProps> =()=>{
     return (
       <div>
         Settings
-      <Button htmlType="button" type="ghost" onClick={()=>{history.push('/dashboard')}} >
+      <Button htmlType="button" type="ghost" onClick={()=>{history.push('/dashboard/inicio')}} >
         voltar para home do portal
       </Button>
       </div> 
