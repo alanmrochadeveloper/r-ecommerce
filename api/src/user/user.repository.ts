@@ -9,7 +9,8 @@ export class UserRepository extends Repository<User> {
   async getById(id: string): Promise<User> {
     try {
       const user = this.find({ id });
-      return user;
+      return;
+      /* return user; */
     } catch (error) {
       throw new NotFoundException(`Não foi possível achar o usuário!`);
     }
@@ -24,11 +25,13 @@ export class UserRepository extends Repository<User> {
   }
 
   async updateUser(modificarUser: UpdateUserDto, id: string): Promise<User> {
-    await this.update(modificarUser, id);
-    return await this.getById(id);
+    /* await this.update(modificarUser, id); */
+    /* return await this.getById(id); */
+    return;
   }
 
   async remover(id: string): Promise<User> {
-    return this.delete({ id });
+    /* return this.delete({ id }); */
+    return;
   }
 }
