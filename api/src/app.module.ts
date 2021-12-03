@@ -8,24 +8,31 @@ import { OrderModule } from './order/order.module';
 import { OrderlineModule } from './orderline/orderline.module';
 import { PersonalInfoModule } from './personal-info/personal-info.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PersonalInfo } from './personal-info/entities/personal-info.entity';
-import { Orderline } from './orderline/entities/orderline.entity';
-import { Order } from './order/entities/order.entity';
-import { Brand } from './brand/entities/brand.entity';
-import { Category } from './category/entities/category.entity';
-import { Product } from './product/entities/product.entity';
-import { User } from './user/entities/user.entity';
+import { join } from 'path';
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
-    type: 'postgres',
-    host: 'localhost',
-    port: 15432,
-    username: 'postgres',
-    password: 'postgres',
-    database: '#Postgres123',
-    entities: [User, Product, Category, Brand, Order, Orderline, PersonalInfo],
-    synchronize: true,
-  }), InitTestModule, UserModule, ProductModule, CategoryModule, BrandModule, OrderModule, OrderlineModule, PersonalInfoModule]
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'db',
+      port: 5432,
+      database: 'r-ecommerce',
+      username: 'postgres',
+      password: '#Postgres123',
+      entities:[join(__dirname, '**', '*.entity.{ts, js}')],
+      autoLoadEntities: true,
+      logging: true,
+      logger: "advanced-console",
+      synchronize: true,
+    }), 
+    InitTestModule,
+    UserModule,
+    ProductModule,
+    CategoryModule,
+    BrandModule,
+    OrderModule,
+    OrderlineModule,
+    PersonalInfoModule
+  ]
 })
 export class AppModule { }

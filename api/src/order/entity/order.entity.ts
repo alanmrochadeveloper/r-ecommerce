@@ -1,6 +1,6 @@
-import { Orderline } from "src/orderline/entities/orderline.entity";
+import { Orderline } from "src/orderline/entity/orderline.entity";
 import { CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { User } from '../../user/entities/user.entity';
+import { User } from '../../user/entity/user.entity';
 
 @Entity('orders')
 export class Order {

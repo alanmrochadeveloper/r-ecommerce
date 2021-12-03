@@ -1,20 +1,19 @@
-import { Order } from "src/order/entities/order.entity";
+import { Product } from "src/product/entity/product.entity";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity('users')
-export class User {
-
+@Entity('brands')
+export class Brand {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ unique: true })
-  email: string;
+  @Column()
+  title: string;
 
   @Column()
-  password: string;
+  description: string;
 
-  @OneToMany(() => Order, order => order.user)
-  orders: Order[];
+  @OneToMany(()=> Product, product => product.brand)
+  products: Product[];
 
   @CreateDateColumn()
   createdAt: Date;
@@ -24,5 +23,4 @@ export class User {
 
   @DeleteDateColumn()
   deletedAt: Date;
-
 }
