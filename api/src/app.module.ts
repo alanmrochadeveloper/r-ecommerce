@@ -19,7 +19,7 @@ import { join } from 'path';
       database: 'r-ecommerce',
       username: 'postgres',
       password: '#Postgres123',
-      entities:[join(__dirname, '**', '*.entity.{ts, js}')],
+      entities:[join(__dirname, '**', '*.entity.{ts, js}')], // join is needed for postgres config. mysql for example does not need it
       autoLoadEntities: true,
       logging: true,
       logger: "advanced-console",
