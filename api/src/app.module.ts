@@ -7,8 +7,8 @@ import { BrandModule } from './brand/brand.module';
 import { OrderModule } from './order/order.module';
 import { OrderlineModule } from './orderline/orderline.module';
 import { PersonalInfoModule } from './personal-info/personal-info.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { join } from 'path';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import ormconfig from 'ormconfig';
 
 @Module({
   imports: [
@@ -19,12 +19,16 @@ import { join } from 'path';
       database: 'r-ecommerce',
       username: 'postgres',
       password: '#Postgres123',
-      entities:[join(__dirname, '**', '*.entity.{ts, js}')], // join is needed for postgres config. mysql for example does not need it
-      autoLoadEntities: true,
+      entities: ['dist/**/entities/*.entity.js'], 
       logging: true,
-      logger: "advanced-console",
-      synchronize: true,
-    }), 
+      logger: 'advanced-console',
+      migrations:  [ 'dist/migrations/*.js'],
+      cli: {
+        migrationsDir: 'src/migrations',
+      },
+      synchronize: false,
+      migrationsRun: true
+    }),
     InitTestModule,
     UserModule,
     ProductModule,
@@ -32,7 +36,7 @@ import { join } from 'path';
     BrandModule,
     OrderModule,
     OrderlineModule,
-    PersonalInfoModule
-  ]
+    PersonalInfoModule,
+  ],
 })
-export class AppModule { }
+export class AppModule {}

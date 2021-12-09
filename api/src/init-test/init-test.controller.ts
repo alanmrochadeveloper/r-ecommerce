@@ -4,22 +4,22 @@ import { Controller, Get } from '@nestjs/common';
 export class InitTestController {
   @Get('test')
   test() {
-    return "It's working!"
+    return "It's working!";
   }
   @Get('teste')
   teste() {
-    return "Está funcionando!"
+    return 'Está funcionando!';
   }
   @Get('api/status')
   apiStatus() {
-    return "OK"
+    return 'OK';
   }
   @Get('database')
   database() {
-    return "Banco está funcionando!"
+    return 'Banco está funcionando!';
   }
   @Get('database/status')
   databaseStatus() {
-    return "OK"
+    return 'OK';
   }
 }

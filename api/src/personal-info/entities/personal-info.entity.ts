@@ -1,9 +1,16 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { User } from '../../user/entity/user.entity';
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import { User } from '../../user/entities/user.entity';
 
 @Entity('personal_info')
 export class PersonalInfo {
-
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -34,7 +41,7 @@ export class PersonalInfo {
   @Column()
   country: string;
 
-  @OneToOne(() => User, user => user)
+  @OneToOne(() => User, (user) => user)
   user: User;
 
   @CreateDateColumn()
@@ -45,5 +52,4 @@ export class PersonalInfo {
 
   @DeleteDateColumn()
   deletedAt: Date;
-
 }

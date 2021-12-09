@@ -1,10 +1,16 @@
 export default {
-  type: 'mysql',
-  host: 'localhost',
-  port: 3306,
-  username: 'root',
-  password: 'root',
-  database: 'test',
-  entities: [],
-  synchronize: true,
-};
+      type: 'postgres',
+      host: 'db',
+      port: 5432,
+      database: 'r-ecommerce',
+      username: 'postgres',
+      password: '#Postgres123',
+      entities: ['dist/**/entities/*.entity.js'], 
+      logging: true,
+      logger: 'advanced-console',
+      migrations:  [ 'dist/migrations/*.js'],
+      cli: {
+        migrationsDir: 'src/migrations',
+      },
+      synchronize: false,
+    }
