@@ -6,6 +6,8 @@ COPY ./package.json .
 
 RUN yarn
 
+# RUN yarn typeorm migration:run
+
 COPY . .
 
 CMD yarn start:dev

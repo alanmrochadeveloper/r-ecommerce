@@ -22,6 +22,8 @@ export class UserController {
 
   @Get()
   findAll() {
+    console.log('env file TYPEORM_TYPE = ', process.env.TYPEORM_TYPE)
+    console.log('env file env  = ', process.env)
     return this.userService.findAll();
   }
 

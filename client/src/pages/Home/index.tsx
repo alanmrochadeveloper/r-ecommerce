@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from 'antd/lib/typography/Title'
-import axios from 'axios'
+// import axios from 'axios'
 import { appName } from '../../utils/globals'
 import MainWrapper from '../../layout/MainWrapper'
 import ProductDetail from '../../components/ProductDetail'

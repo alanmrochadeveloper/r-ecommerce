@@ -7,11 +7,16 @@ import { BrandModule } from './brand/brand.module';
 import { OrderModule } from './order/order.module';
 import { OrderlineModule } from './orderline/orderline.module';
 import { PersonalInfoModule } from './personal-info/personal-info.module';
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import ormconfig from 'ormconfig';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
+/* import ormconfig from 'ormconfig'; */
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: [".env",".env.development",".env.hml",".env.production"],
+      isGlobal: true
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'db',
@@ -27,7 +32,8 @@ import ormconfig from 'ormconfig';
         migrationsDir: 'src/migrations',
       },
       synchronize: false,
-      migrationsRun: true
+      migrationsRun: true,
+      autoLoadEntities: true
     }),
     InitTestModule,
     UserModule,
