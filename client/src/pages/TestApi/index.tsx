@@ -29,7 +29,7 @@ const TestApi: React.FC<IProps> = () => {
 
   const fetchProductsApiResponse = React.useCallback(async () => {
     try {
-      const { data } = await axios(`${baseApiUrl}/${ProductEndpoints.STATUS}`)
+      const { data } = await axios(`${baseApiUrl}/${ProductEndpoints.PRODUCTS_CHECK_STATUS}`)
       setProductsApiStatus(data)
     }
     catch (e: any) {
@@ -39,7 +39,7 @@ const TestApi: React.FC<IProps> = () => {
 
   const fetchCategoriesApiResponse = React.useCallback(async () => {
     try {
-      const { data } = await axios(`${baseApiUrl}/${CategoryEndpoints.STATUS}`)
+      const { data } = await axios(`${baseApiUrl}/${CategoryEndpoints.CATEGORIES_CHECK_STATUS}`)
       setCategoriesApiStatus(data)
     }
     catch (e: any) {

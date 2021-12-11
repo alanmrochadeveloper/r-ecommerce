@@ -14,17 +14,17 @@ export enum EndPoints {
 }
 
 export enum UsersEndPoints {
-  FIND_ALL = "users",
+  USERS = "users",
 }
 
 
 export enum CategoryEndpoints {
-  FIND_ALL = "categories",
-  FIND_PRODUCTS = "categories/products",
-  STATUS = "categories/check/status",
+  CATEGORIES = "categories",
+  CATEGORIES_PRODUCTS = "categories/products",
+  CATEGORIES_CHECK_STATUS = "categories/check/status",
 }
 export enum ProductEndpoints {
-  FIND_ALL = "products",
-  FIND_ORDERS = "products/orders",
-  STATUS = "products/check/status",
+  PRODUCTS = "products",
+  PRODUCTS_ORDERS = "products/orders",
+  PRODUCTS_CHECK_STATUS = "products/check/status",
 }

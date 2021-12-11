@@ -36,7 +36,7 @@ export class Product {
   brand: Brand;
 
   @OneToMany(() => Product, (product) => product.orderlines)
-  orderlines: Orderline[];
+  orderlines?: Orderline[];
 
   @CreateDateColumn()
   createdAt: Date;

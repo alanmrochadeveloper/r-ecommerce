@@ -18,10 +18,10 @@ const ProductDetail: React.FC<IProps> = ({ product }) => {
                     Os detalhes do produto vem aqui !<div>id: {product.id}</div>
                     <div>título: {product.title}</div>
                     <div>descrição: {product.description}</div>
-                    <div>category: {product.category}</div>
+                    <div>categoria: {product.category}</div>
                     <div>
                         <img
-                            src={productImage}
+                            src={productImage} // TODO in the near future add this = > src={product.imageSource}
                             alt={`${product.title}`}
                             style={{ maxWidth: 100 }}
                         />

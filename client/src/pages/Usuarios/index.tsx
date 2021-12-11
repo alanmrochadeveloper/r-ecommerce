@@ -10,7 +10,7 @@ const Usuarios: React.FC<IProps> = () => {
     const [users, setUsers] = React.useState<IUser[]>()
     const fetchUsers = React.useCallback(async () => {
         try {
-            const response = await api(UsersEndPoints.FIND_ALL)
+            const response = await api(UsersEndPoints.USERS)
             setUsers(response.data)
         } catch (error) {
             console.log(`Usuários não encontrados!`)

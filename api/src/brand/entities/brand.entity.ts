@@ -21,7 +21,7 @@ export class Brand {
   description: string;
 
   @OneToMany(() => Product, (product) => product.brand)
-  products: Product[];
+  products?: Product[];
 
   @CreateDateColumn()
   createdAt: Date;

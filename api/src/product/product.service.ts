@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { mockProducts } from 'src/Mock/products.mock';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 
@@ -9,7 +10,7 @@ export class ProductService {
   }
 
   findAll() {
-    return `This action returns all product`;
+    return mockProducts;
   }
 
   findOne(id: number) {
