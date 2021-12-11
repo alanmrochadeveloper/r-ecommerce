@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { mockProducts } from 'src/Mock/products.mock';
+import { mockProducts, mockProduct } from 'src/Mock/products.mock';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 
@@ -14,7 +14,7 @@ export class ProductService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} product`;
+    return mockProduct;
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
