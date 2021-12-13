@@ -15,6 +15,9 @@ export class Category {
   id: string;
 
   @Column()
+  teste: string;
+
+  @Column()
   title: string;
 
   @Column()

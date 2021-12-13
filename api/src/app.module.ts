@@ -24,16 +24,18 @@ import { ConfigModule } from '@nestjs/config';
       database: 'r-ecommerce',
       username: 'postgres',
       password: '#Postgres123',
-      entities: ['dist/**/entities/*.entity.js'], 
+      entities: [__dirname + "/**/entities/*.entity{.ts,.js}"], 
       logging: true,
       logger: 'advanced-console',
-      migrations:  [ 'dist/migrations/*.js'],
+      migrations:  [__dirname + "/migrations/*{.ts,.js}"],
       cli: {
-        migrationsDir: 'src/migrations',
+        migrationsDir: "src/migrations",
+        entitiesDir: "src/migrations",
+        subscribersDir: "src/migrations",
       },
-      synchronize: false,
       migrationsRun: true,
-      autoLoadEntities: true
+      // synchronize: false,
+      // autoLoadEntities: true
     }),
     InitTestModule,
     UserModule,
