@@ -10,7 +10,6 @@ import {
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import { ProductsResponseDto } from './dto/response-product.dto';
 
 @Controller('products')
 export class ProductController {
