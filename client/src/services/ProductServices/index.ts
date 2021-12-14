@@ -8,3 +8,7 @@ export const getProductsAxios = async ()=>{
 export const getProductByIdAxios = async (id: string) => {
     return await api.get<IProduct>(ProductEndpoints.PRODUCTS+`/${id}`);
 }
+
+export const postProduct = async (product: IProduct) => {
+  return await api.post<IProduct>(ProductEndpoints.PRODUCTS, product);
+}
