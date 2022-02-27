@@ -4,7 +4,7 @@ services:
         container_name: r-ecommerce-client
         build: ./client
         ports:
-        - 4000:3000
+        - 13000:3000
         volumes:
         - ./client:/home/app/client
         depends_on:
@@ -14,7 +14,7 @@ services:
         container_name: r-ecommerce-api
         build: ./api
         ports:
-        - 4001:3001
+        - 13001:3001
         volumes:
         - ./api:/home/app/api
         depends_on:
@@ -31,4 +31,4 @@ services:
         ports:
           - 15432:5432
         volumes:
-        - ./db:/var/lib/postgres
+          - ./init.sql:/docker-entrypoint-initdb.d/init.sql
