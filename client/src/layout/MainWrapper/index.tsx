@@ -30,9 +30,6 @@ const MainWrapper: React.FC<IProps> = ({ children }) => {
     return () => window.removeEventListener("resize", resizeWindow);
   }, []);
 
-  React.useEffect(() => {
-    console.log("pathname = ", pathname);
-  });
   const handleMenuClick = (e: any) => {
     navigateToUrl(e.key);
   };
