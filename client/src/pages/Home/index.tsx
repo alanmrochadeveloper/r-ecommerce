@@ -21,8 +21,8 @@ const Home: React.FC<IProps> = () => {
 
   const getInitTestValue = React.useCallback(async () => {
     try {
-      //	const response = await axios(`${api}/init-test/test`) // TODO for testing purpose, should be removed later
-      // const responseBr = await axios(`${api}/init-test/teste`)
+      //const response = await axios(`${api}/init-test/test`) // TODO for testing purpose, should be removed later
+      //const responseBr = await axios(`${api}/init-test/teste`)
       //const responseDatabase = await axios(`${api}/init-test/database`)
       const responseBr = await api(`${EndPoints.TEST}`);
       const responseDatabase = await api(`${EndPoints.TEST_DB}`)
@@ -34,9 +34,9 @@ const Home: React.FC<IProps> = () => {
 
   const getProductsValue = React.useCallback(async () => {
     try {
-      const response = await getProductsAxios();
-      console.log(`response.data = ${JSON.stringify(response.data)}`);
-      setProductsApi(response.data);
+      const { data } = await getProductsAxios();
+      console.log(`response.data = ${JSON.stringify(data)}`);
+      setProductsApi(data);
     }
     catch (e: any) {
       console.error(`Erro ao tentar capturar os valores de produtos da API = ${e.message}`)
@@ -52,7 +52,7 @@ const Home: React.FC<IProps> = () => {
 
   React.useEffect(() => {
     getProductsValue();
-    }, [getProductsValue])
+  }, [getProductsValue])
 
   return (
     <MainWrapper>
